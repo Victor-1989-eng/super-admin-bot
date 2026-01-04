@@ -1,0 +1,20 @@
+super-admin-bot/
+│
+├── bot/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config.py
+│   ├── database.py
+│
+│   ├── handlers/
+│   │   ├── panel.py
+│   │   └── basic.py
+│
+│   ├── keyboards/
+│   │   └── admin_panel.py
+│
+│   └── services/
+│       └── permissions.py
+│
+├── requirements.txt
+└── README.md
