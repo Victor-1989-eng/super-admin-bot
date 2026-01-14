@@ -1,9 +1,6 @@
-from aiogram import Router
-from aiogram.types import Message
+from aiogram.enums import ChatType
 
-router = Router()
-
-@router.message()
+@router.message(lambda m: m.chat.type == ChatType.PRIVATE)
 async def ignore_private(message: Message):
-    if message.chat.type == "private":
-        await message.answer("🤖 Бот работает только в группах")
+    await message.answer("🤖 Бот работает только в группах")
+
