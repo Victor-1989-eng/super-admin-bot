@@ -8,20 +8,14 @@ from bot.services.permissions import is_admin
 
 router = Router()
 
-
 @router.message(Command("panel"))
-async def open_panel(message: Message, bot):
-    if message.chat.type not in (ChatType.GROUP, ChatType.SUPERGROUP):
-        return
-
-    if not await is_admin(bot, message):
-        await message.reply("❌ Только для администраторов")
-        return
-
+async def open_panel(message: Message):
     await message.reply(
         "🎛 Панель администратора",
         reply_markup=main_panel()
     )
+
+
 
 
 @router.callback_query(F.data == "stats")
